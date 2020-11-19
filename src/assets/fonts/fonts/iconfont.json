@@ -1,0 +1,51 @@
+{
+  "id": "2212403",
+  "name": "kai_cms",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "xiaozhoubg的cms",
+  "glyphs": [
+    {
+      "icon_id": "1058871",
+      "name": "user",
+      "font_class": "iconuser",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "1061079",
+      "name": "Blog",
+      "font_class": "blog",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "5747659",
+      "name": "Task Statistics",
+      "font_class": "TaskStatistics",
+      "unicode": "e72d",
+      "unicode_decimal": 59181
+    },
+    {
+      "icon_id": "7712756",
+      "name": "video",
+      "font_class": "video",
+      "unicode": "e741",
+      "unicode_decimal": 59201
+    },
+    {
+      "icon_id": "8804689",
+      "name": "book",
+      "font_class": "book",
+      "unicode": "e8ec",
+      "unicode_decimal": 59628
+    },
+    {
+      "icon_id": "11737028",
+      "name": "resources",
+      "font_class": "resources",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    }
+  ]
+}
