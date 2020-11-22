@@ -21,3 +21,12 @@ export const test = () => request.get('/test');
  * 
  */
 export const createBook = params => request.post('/books',params)
+
+
+
+/**
+ * @method 查询书籍
+ * @params 说明：无需传入参数即可获取到所有书籍的列表
+ * 
+ */
+export const getBook = () => request.get('/books',)
