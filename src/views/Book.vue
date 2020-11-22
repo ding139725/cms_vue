@@ -80,9 +80,14 @@
       <el-table-column prop="title" label="书名"> </el-table-column>
       <el-table-column prop="orderby" label="权重" width="80">
       </el-table-column>
+      <!-- 操作 -->
       <el-table-column label="操作" width="120">
-        <el-button type="warning" icon="el-icon-edit" circle></el-button>
-        <el-button type="danger" icon="el-icon-delete" circle></el-button>
+        <template slot-scope="scope">
+          <!-- 修改按钮 -->
+          <el-button type="warning" icon="el-icon-edit" circle></el-button>
+          <!-- 删除按钮 -->
+          <el-button type="danger" icon="el-icon-delete" circle @click="deleteBook(scope.row.id)"></el-button>
+        </template>
       </el-table-column>
     </el-table>
   </div>
@@ -132,6 +137,7 @@ export default {
         return this.$message.error("添加书籍失败");
       }
       this.$message.success("添加书籍成功");
+      this.getBookList();
       this.addBookDialogVisible = false;
     },
     // 删除图片触发事件
@@ -156,6 +162,16 @@ export default {
     handleExceed() {
       return this.$message.error("只能上传一个图片");
     },
+    // 根据id删除书籍
+    async deleteBook (id) {
+      const {data:res} = await this.$api.deleteBook(id);
+      console.log(res);
+      if(res.code!=20000){
+        return this.$message.error('删除失败')
+      }
+      this.$message.success('删除成功');
+      this.getBookList();
+    }
   },
 };
 </script>

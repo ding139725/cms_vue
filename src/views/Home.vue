@@ -58,12 +58,11 @@
 <script>
 export default {
   name: "Home",
-  data() {},
   methods: {
     logout() {
       sessionStorage.clear();
       this.$router.push("/login");
-    },
+    }
   },
 };
 </script>

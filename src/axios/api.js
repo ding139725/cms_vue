@@ -29,4 +29,15 @@ export const createBook = params => request.post('/books',params)
  * @params 说明：无需传入参数即可获取到所有书籍的列表
  * 
  */
-export const getBook = () => request.get('/books',)
+export const getBook = () => request.get('/books')
+
+
+
+/**
+ * @method 删除书籍
+ * @params 说明：调用此接口传入想删除的id即可删除id
+ * @params 必选参数：id
+ * 
+ */
+export const deleteBook = params => request.delete(`books/${params}`,)
+
