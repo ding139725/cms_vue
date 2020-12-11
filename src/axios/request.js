@@ -12,6 +12,4 @@ service.interceptors.request.use(
     }
 )
 
-
-
-export default service
+export default service;

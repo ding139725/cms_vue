@@ -25,23 +25,23 @@
             <i class="iconfont iconTaskStatistics"></i>
             <span slot="title">数据统计</span>
           </el-menu-item>
-          <el-menu-item index="book">
+          <el-menu-item index="/home/book">
             <i class="iconfont iconbook"></i>
             <span slot="title">书籍管理</span>
           </el-menu-item>
-          <el-menu-item index="blog">
+          <el-menu-item index="/home/blog">
             <i class="iconfont iconblog"></i>
             <span slot="title">博客管理</span>
           </el-menu-item>
-          <el-menu-item index="video">
+          <el-menu-item index="/home/video">
             <i class="iconfont iconvideo"></i>
             <span slot="title">视频管理</span>
           </el-menu-item>
-          <el-menu-item index="resources">
+          <el-menu-item index="/home/resources">
             <i class="iconfont iconresources"></i>
             <span slot="title">资源管理</span>
           </el-menu-item>
-          <el-menu-item index="user">
+          <el-menu-item index="/home/user">
             <i class="iconfont iconiconuser"></i>
             <span slot="title">用户管理</span>
           </el-menu-item>
