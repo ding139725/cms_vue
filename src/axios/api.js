@@ -255,3 +255,67 @@ export const selectVideoListById = id => request.get(`videolist/${id}`)
  */
 export const updateVideoList = (id,params) => request.put(`videolist/${id}`,params)
 
+/**
+ * @method 获取资源列表
+ * @params 说明：无需传参即可获取
+ */
+export const getResourse = () => request.get('resourse')
+
+/**
+ * @method 根据id删除资源
+ * @params 说明：传入id进行删除操作
+ * @params 必选参数id
+ * 
+ */
+export const deleteResourse = id => request.delete(`resourse/${id}`)
+
+/**
+ * @method 添加视频
+ * @params 说明：传入对象
+ * @params 必选参数params 对象
+ */
+export const createResourse = params => request.post('resourse',params)
+/**
+ * @method 根据id查询某一个资源
+ * @params 说明：传入id
+ * @params 必选参数id
+ */
+export const selectResourseById = id => request.get(`resourse/${id}`)
+
+/**
+ * @method 修改视频列表
+ * @params 说明：传入id 和params 修改后的数据
+ * @params 必选参数id params
+ */
+export const updateResourse = (id,params) => request.put(`resourse/${id}`,params)
+
+/**
+ * @method 查询用户列表
+ * @params 说明：无需传入参数即可查询所有数据
+ */
+export const getUserList = () => request.get('users')
+
+/**
+ * @method 新增用户列表
+ * @params 说明：需要传入新增的用户信息
+ * @param 必选参数 
+ */
+export const createUser = params => request.post('users',params)
+/**
+ * @method 删除用户
+ * @params 说明：传入需要删除的用户id即可进行删除操作
+ * @params id必选参数 需要删除的用户id
+ */
+export const deleteUser = id => request.delete(`users/${id}`)
+/**
+ * @method 根据id查询指定用户
+ * @params 说明：传入想要查询的id即可
+ * @params id必选参数 需要查询的用户id
+ */
+export const selectUserById = id => request.get(`users/${id}`)
+/**
+ * @method 修改用户
+ * @params 说明：传入修改的id 以及修改后的值
+ * @params 说明：id params必选参数
+ */
+export const updateUser  = (id,params) => request.put(`users/${id}`,params)

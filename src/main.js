@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store/index'
+import Vuex from 'vuex'
 import 'element-ui/lib/theme-chalk/index.css';
 import Element, { Message, MessageBox } from 'element-ui'
 import './assets/css/common.css'
@@ -13,7 +15,9 @@ Vue.prototype.$api = api;
 Vue.prototype.$message = Message
 Vue.prototype.$messagebox = MessageBox;
 Vue.use(Element);
+Vue.use(Vuex);
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

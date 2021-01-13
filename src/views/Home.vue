@@ -85,4 +85,7 @@ export default {
   width: 100px;
   font-size: 18px;
 }
+.el-menu-vertical-demo {
+  height: 100vh;
+}
 </style>

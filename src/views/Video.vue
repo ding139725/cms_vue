@@ -48,7 +48,9 @@
         <el-dialog
         title="提示"
         :visible.sync="videoDialogVisible"
-        width="30%">
+        width="30%"
+        @close='dialogClose'
+        >
             <el-upload
           action="http://127.0.0.1:7001/api/upload"
           :headers="header"
@@ -63,7 +65,7 @@
           <i class="el-icon-plus"></i>
         </el-upload>
         <el-form ref="form" :model="videoForm" label-width="80px">
-            <el-form-item label="视频类名称">
+            <el-form-item label="视频类名称" prop='title'>
                 <el-input v-model="videoForm.title"></el-input>
             </el-form-item>
         </el-form>
@@ -80,6 +82,7 @@
 }
 </style>
 <script>
+import { mapState } from 'vuex';
 export default {
     data () {
         return {
@@ -103,6 +106,9 @@ export default {
     created () {
         this.getVideoList()
     },
+      computed: {
+    ...mapState(['userInfo'])
+  },
     methods: {
         // 获取所有视频类的列表
         async getVideoList () {
@@ -182,8 +188,11 @@ export default {
         // 跳转到视频列表页
         goVideoList (id) {
             this.$router.push({name:'videoList',params:{id}})
+        },
+        dialogClose () {
+            console.log('对话框关闭事s件')
+            this.$refs.form.resetFields()
         }
-
     }
 }
 </script>

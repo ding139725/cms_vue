@@ -149,6 +149,8 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     return {
@@ -182,10 +184,14 @@ export default {
         img: "",
         orderby: "",
       },
+      isAdmin:false
     };
   },
   created() {
     this.getBookList();
+  },
+    computed: {
+    ...mapState(['userInfo'])
   },
   methods: {
     //  获取书籍列表

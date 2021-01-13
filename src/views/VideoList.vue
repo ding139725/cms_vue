@@ -7,11 +7,14 @@
     <!-- 渲染列表表单 -->
     <el-table
     :data="videoList"
-    style="width: 100%">
+    style="width: 100%"
+    class="videoListBox"
+    >
       <el-table-column
         prop="title"
         label="视频名称"
-        width="180">
+        width="180"
+        >
       </el-table-column>
       <el-table-column
         prop="iframe_url"
@@ -43,12 +46,14 @@
     <el-dialog
     title="提示"
     :visible.sync="dialogVisible"
-    width="30%">
-    <el-form ref="form" :model="videoForm" label-width="80px">
-      <el-form-item label="视频名称">
+    width="30%"
+    @close='dialogClosed'
+    >
+    <el-form ref="formRef" :model="videoForm" label-width="80px">
+      <el-form-item label="视频名称" prop="title">
         <el-input v-model="videoForm.title"></el-input>
       </el-form-item>
-      <el-form-item label="视频链接">
+      <el-form-item label="视频链接" prop="iframe_url">
         <el-input v-model="videoForm.iframe_url"></el-input>
       </el-form-item>
     </el-form>
@@ -130,6 +135,10 @@ export default {
         this.$message.success('添加成功')
         this.dialogVisible = false
       }
+    },
+    // 对话框关闭触发事件
+    dialogClosed () {
+      this.$refs.formRef.resetFields()
     }
   },
   created () {
@@ -140,6 +149,13 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less">
+.videoListBox {
+  th {
+    height: 100px;
+  }
+  td {
+    height: 100px;
+  }
+}
 </style>

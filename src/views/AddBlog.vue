@@ -66,6 +66,7 @@ export default {
     changeDate(md_text,html_text){
         this.addBlogForm.md_text = md_text;
         this.addBlogForm.html_text = html_text;
+        console.log(html_text)
     },
     // 保存按钮
     async addBlog(){

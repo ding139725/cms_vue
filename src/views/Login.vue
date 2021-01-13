@@ -32,13 +32,14 @@
 </template>
 <script>
 import request from "../axios/request";
+import { mapMutations, mapState } from 'vuex'
 export default {
   data() {
     return {
       // 登录验证的表单
       loginForm: {
         username: "admin",
-        password: "1234567",
+        password: "123456",
       },
       // 登录表单的验证规则
       loginRules: {
@@ -64,8 +65,11 @@ export default {
     };
   },
   created() {},
-
+  computed: {
+    ...mapState(['userInfo'])
+  },
   methods: {
+    ...mapMutations(['setUserInfo']),
     //登录事件
     login() {
       this.$refs.loginFormRef.validate( async (valid) => {
@@ -73,15 +77,17 @@ export default {
         if (!valid) {
           return;
         }
-        let {data:res} = await this.$api.login(this.loginForm)
-            if(res.code==20000){
+        let { data: res } = await this.$api.login(this.loginForm)
+            if( res.code == 20000){
             sessionStorage.setItem('token',res.token);
             this.$router.push('/home')
+            this.setUserInfo(res.data)
+            console.log(this.userInfo);
             return this.$message.success('登录成功')
             }
             this.$message.error('用户名或密码错误')
       });
-    },
+    }
   },
 };
 </script>

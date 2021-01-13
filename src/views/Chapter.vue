@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-button type="primary" @click="addChapterDialogVisible = true">添加章节</el-button>
+    <el-button type="primary" :disabled='isAdmin' @click="addChapterDialogVisible = true">添加章节</el-button>
         <!-- 渲染数据列表的table -->
     <el-table :data="chapterList" stripe style="width: 100%">
       <el-table-column type="index" label="#"></el-table-column>
@@ -76,6 +76,7 @@
   </div>  
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
   data(){
     return{
@@ -98,6 +99,10 @@ export default {
     this.chapterObj.book_id = this.book_id
     console.log(this.book_id)
     this.getChapterList()
+
+  },
+    computed: {
+    ...mapState(['userInfo'])
   },
   methods:{
     // 获取章节列表方法
